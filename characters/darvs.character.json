@@ -1,6 +1,6 @@
 {
     "name": "D.A.R.V.S.",
-    "clients": [],
+    "clients": ["telegram"],
     "modelProvider": "groq",
     "settings": {
         "voice": {
