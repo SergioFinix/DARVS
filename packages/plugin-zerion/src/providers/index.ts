@@ -10,9 +10,9 @@ interface ZerionProvider extends Provider {
 export const zerionProvider: ZerionProvider = {
     get: async (_runtime: IAgentRuntime, message: Memory, _state?: State): Promise<ZerionProviderResponse> => {
         try {
-            if (!process.env.ZERION_API_KEY) {
+            /*if (!process.env.ZERION_API_KEY) {
                 throw new Error("Zerion API key not found in environment variables. Make sure to set the ZERION_API_KEY environment variable.");
-            }
+            }*/
             const content = message.content as { text: string };
             const addressMatch = content.text.match(/0x[a-fA-F0-9]{40}/);
             if (!addressMatch) {
@@ -25,7 +25,7 @@ export const zerionProvider: ZerionProvider = {
                 method: "GET",
                 headers: {
                     "Accept": "application/json",
-                    "Authorization": `Basic ${process.env.ZERION_API_KEY}`
+                    "Authorization": `Basic emtfZGV2X2I5OWQzOWYwYjk1MjQ4YTU5ODJlMjZlYjYwNTI3YTUwOg==`
                 }
             });
 
