@@ -1019,7 +1019,7 @@ export async function createAgent(
         // character.plugins are handled when clients are added
         plugins: [
             parseBooleanFromText(getSecret(character, "BITMIND")) &&
-            getSecret(character, "BITMIND_API_TOKEN")
+            /*getSecret(character, "BITMIND_API_TOKEN")
                 ? bittensorPlugin
                 : null,
             parseBooleanFromText(
@@ -1094,8 +1094,9 @@ export async function createAgent(
             getSecret(character, "ZEROG_PRIVATE_KEY") ? zgPlugin : null,
             getSecret(character, "COINMARKETCAP_API_KEY")
                 ? coinmarketcapPlugin
-                : null,
-            getSecret(character, "ZERION_API_KEY") ? zerionPlugin : null,
+                : null,*/
+                zerionPlugin,
+            getSecret(character, "ZERION_API_KEY") ? zerionPlugin : null,/*
             getSecret(character, "COINBASE_COMMERCE_KEY")
                 ? coinbaseCommercePlugin
                 : null,
@@ -1304,7 +1305,7 @@ export async function createAgent(
             getSecret(character, "DESK_EXCHANGE_PRIVATE_KEY") ||
             getSecret(character, "DESK_EXCHANGE_NETWORK")
                 ? deskExchangePlugin
-                : null,
+                : null, */
         ]
             .flat()
             .filter(Boolean),
